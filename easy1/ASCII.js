@@ -7,7 +7,7 @@ asciiValue('Launch School');      // 1251
 asciiValue('a');                  // 97
 asciiValue('');                   // 0*/
 
-function asciiValue(string) {
+function utf16Value(string) {
   let total = 0;
   for (let i = 0; i < string.length; i++) {
     total += string.charCodeAt(i);
@@ -15,4 +15,13 @@ function asciiValue(string) {
   return total;
 }
 
-console.log(asciiValue('Launch School'));
+//Solution #2:
+function utf16Value1(string) {
+  let total = 0;
+  for (letter of string) {
+    total += letter.charCodeAt(0);
+  }
+  return total;
+}
+
+console.log(utf16Value('Launch School'));
